@@ -28,11 +28,6 @@ def regex(input_str: str, pattern: str, do_what: str = "findall"):
         else:
             raise ValueError("The function expects 'findall' or 'split' to be provided")
 
-
-{'title': 'ARK: Survival Ascended', 'thumbnail': 'https://cdn.akamai.steamstatic.com/steam/apps/2399830/header.jpg?t=1698342194', 'tags': ['Survival', 'Dinosaurs', 'Open World', 'Adventure', 'Action'], 'release_date': '2023-10-26', 'review_score': 'Mixed', 'reviewed_by': 7199, 'price_currency': '40,49€', 'sale_price': '40,49€', 'original_price': ' '}
-{'title': 'Euro Truck Simulator 2', 'thumbnail': 'https://cdn.akamai.steamstatic.com/steam/apps/227300/header.jpg?t=1697795373', 'tags': ['Driving', 'Transportation', 'Simulation', 'Open World', 'Automobile Sim'], 'release_date': '2012-10-12', 'review_score': 'Overwhelmingly Positive', 'reviewed_by': 505740, 'price_currency': '4,99€', 'sale_price': '4,99€', 'original_price': '19,99€'}
-
-
 def split_price(input, position):
     try:
         splited_val = input[position]
