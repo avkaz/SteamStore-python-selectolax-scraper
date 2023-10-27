@@ -1,6 +1,7 @@
 from selectolax.parser import HTMLParser
 from utils.extract import extract_full_body_html
 from utils.parse import parse_raw_attributes
+from utils.process import format_and_transform
 from config.tools import get_config
 import pandas as pd
 
@@ -17,6 +18,7 @@ if __name__ == '__main__':
 
     for d in divs:
         attrs = parse_raw_attributes(d, config.get('item'))
+        attrs = format_and_transform(attrs)
         # title = d.css_first('div[class*="StoreSaleWidgetTitle"]').text()
         # thumbnail = d.css_first('img[class*="CapsuleImage"]').attributes.get('src')
         # tags = [a.text() for a in d.css('div[class*="StoreSaleWidgetTags"] > a')[:5]]
@@ -38,7 +40,5 @@ if __name__ == '__main__':
         #             }
         print(attrs)
 
-    df = pd.DataFrame(attrs, columns=["title", "thumbnail", "release_date", "review_score", "reviewed_by", "price_currency", "sale_price", "original_price"])
-    df.set_index("title", inplace=True)
-
-    print(df)
+    # df = pd.DataFrame(attrs, columns=["title", "thumbnail", "release_date", "review_score", "reviewed_by", "price_currency", "sale_price", "original_price"])
+    # df.set_index("title", inplace=True)
