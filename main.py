@@ -12,13 +12,12 @@ if __name__ == '__main__':
         wait_for = config.get('container').get('selector')
         )
     
+    nodes = parse_raw_attributes(html, [config.get('container')])
 
-    tree = HTMLParser(html)
-    divs = tree.css('div[class*="salepreviewwidgets_StoreSaleWidgetContainer"]') # *= is should contain
 
     game_data = []
-    for d in divs:
-        attrs = parse_raw_attributes(d, config.get('item'))
+    for node in nodes.get('store_sale_divs'):
+        attrs = parse_raw_attributes(node, config.get('item'))
         attrs = format_and_transform(attrs)
         game_data.append(attrs)
 

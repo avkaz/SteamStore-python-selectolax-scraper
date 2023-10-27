@@ -5,7 +5,7 @@ _config = {
     "meta": {
         "name": "Steam Sales Scraper",
         "description": "Extracts the highest discounted games from Steam",
-        "author": "Alexey Kazakov",
+        "author": "Alex Kazakov",
         "version": 0.1
     },
     "container": {
